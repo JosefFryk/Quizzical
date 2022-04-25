@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+.wrapper {
+    display: flex;
+    background: url(./images/blackboard.jpg);
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper h1 {
+    color: white;
+    font-size: 5rem;
+    font-family: 'Karla';
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-color: #4D5B9E;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrapper p {
+    color: white;
+    font-size: 2rem;
+    font-family: 'Inter';
+    font-style: normal;
+    padding: 0 5% 0 10%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.questionBtn {
+    height: 60px;
+    width: 150px;
+    border-radius: 15px;
+    border-color: black;
+    color: white;
+    background: #4D5B9E;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-link {
+    font-size: 1.3rem;
+    font-family: 'Inter';
+    font-style: normal;
+ 
 }

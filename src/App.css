@@ -8,6 +8,15 @@
 
 }
 
+.wrapperQuest {
+    display: flex;
+    background: url(./images/blackboard.jpg);
+    min-height: 100vh;
+    flex-direction: column;
+    align-items:center;
+    
+}
+
 .wrapper h1 {
     color: white;
     font-size: 5rem;
@@ -40,4 +49,67 @@
     font-family: 'Inter';
     font-style: normal;
  
+}
+
+.checkAnswers {
+width: 150px;
+height: 50px;
+background: #4D5B9E;
+border-radius: 10px;
+}
+
+.choices {
+    list-style: none;
+    display: flex;
+
+}
+
+.questionBox {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 650px;
+    border-bottom: 1px solid  orange;
+ 
+    
+}
+
+.questionBox li {
+   width: 100%;
+}
+
+.questionBox h2 {
+    font-size: 12px;
+    color: orange;
+}
+
+.questionBox p {
+    color: white;
+    font-family: Karla;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+
+}
+
+.choices {
+   
+    padding: 0 10px 20px 10px;
+}
+
+.choices button {
+min-width: 120px;
+height: 35px;    
+border: 0.8px solid #4D5B9E ;
+border-radius: 8px;
+font-family: Inter;
+font-size: 13px;
+font-weight: 500;
+line-height: 12px;
+text-align: center;
+background: white;
+color: black;
+
 }

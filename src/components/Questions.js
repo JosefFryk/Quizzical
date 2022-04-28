@@ -1,68 +1,65 @@
 
 import React from "react"
-import { nanoid } from "nanoid"
+import Answers from "./Answers"
+import "./css/Questions.css"
 
 
 
-export default function Home() {
+export default function Home(props) {
     
     
-    const [quiz, setQuiz] = React.useState([])
-    const [answer, setAnswer] = React.useState() 
+    function scoreElement(){
+        return (
+          <>
+           <div className="scoreText">You got {props.score} / 5 questions correct!</div>
+           <button onClick={props.replay}
+                    className="resetBtn"
+           >Play Again</button>
+         </>
+        )
+      }
 
-
-    // function selectAnswer(){
-    //     setAnswer(document.addEventListener('click', function(){
-
-    //         document.getElementById
-    //     }))
-
-    // }
-
-    // function checkAnswers (){
-
-    //     if (selectAnswer === quiz.correct_answer)
-    // }
-    
-    
-    React.useEffect(() => {
-    
-      fetch("https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple")
-          .then(res => res.json())
-          .then(data => setQuiz(data.results))
-    
-    }, [])
-
-  //fixing API znaky
-  const htmlDecode = input => {
-    const doc = new DOMParser().parseFromString(input, "text/html")
-    return doc.documentElement.textContent
-  }
-
-
+      function reload(){
+          return(
+                window.location.reload()
+          )
+      }
+      
+         
       return(
         <div >
-
         <div className="wrapperQuest">
-            {quiz.map(quest => {
+            {props.questions.map(question => {
                 return (
+                            
                     <ul className="questionBox">
                         <li >
 
-                            <h2>{quest.category}</h2>
-                            <p>{htmlDecode(quest.question)}</p>
+                            <h2>{question.category}</h2>
+                         
                            <Answers
+                                    question={question} 
+                                    showAnswers={props.showAnswers} 
+                                    handleChoice={props.handleChoice}
                                     
-                                    incorrect = {quest.incorrect_answers}
-                                    correct = {quest.correct_answer}
-                             />
+                                    />
 
                         </li>
                     </ul>
                     )
                 })}
+            <div className="btnBox">
 
-            <button className="checkAnswers">Check Answers</button>
+                {props.showAnswers ? null : <button className="checkAnswers"
+                    onClick={props.handleScore}
+                    >Check Answers</button>}
+                {props.showAnswers && scoreElement()}
+                <button onClick={() => reload()}
+                        className="backBtn"    
+                
+                >Back to Menu</button>
+           
+            </div>
           
     
         </div>

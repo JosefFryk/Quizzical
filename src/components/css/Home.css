@@ -1,0 +1,109 @@
+.wrapper {
+    display: flex;
+    background: url(/src/images/blackboard.jpg);
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.wrapper h1 {
+    color: white;
+    font-size: 5rem;
+    font-family: 'Karla';
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-color: #4D5B9E;
+
+}
+
+.wrapper p {
+    color: white;
+    font-size: 2rem;
+    font-family: 'Inter';
+    font-style: normal;
+    padding: 0 5% 0 10%;
+}
+
+.text-link {
+    font-size: 1.3rem;
+    font-family: 'Inter';
+    font-style: normal;
+ 
+}
+
+.startBtn {
+    height: 60px;
+    width: 150px;
+    border-radius: 15px;
+    border-color: black;
+    color: white;
+    background: #4D5B9E;
+}
+
+label {
+    color: #fff;
+    font-size: smaller;
+   
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* selector category */
+.categorySelector {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background:#4D5B9E;
+    flex: 1;
+    padding: 0 .5em;
+    color:#fff;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    
+ }
+ .categorySelector::-ms-expand  {
+    display: none;
+}
+
+
+ .categorySelectorBox{
+    position: relative;
+    display: flex;
+    width: 15em;
+    height: 2rem;
+    line-height: 3;
+    overflow: hidden;
+    border-radius: 0.3rem;
+    background: #4D5B9E;
+    
+
+}
+
+.categorySelectorBox::after {
+    content: '\25bc';
+    position: absolute;
+    top: -5px;
+    right: 0;
+    padding: 0 0.8rem;
+    background: rgb(243, 243, 243);
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+ }
+ .categorySelectorBox:hover::after {
+    color: #4D5B9E;
+ }
